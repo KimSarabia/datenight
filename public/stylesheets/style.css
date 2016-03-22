@@ -1,8 +1,57 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #00c6ff , #0072ff); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #00c6ff , #0072ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 a {
   color: #00B7FF;
+}
+
+
+a {
+  color: #00B7FF;
+}
+
+#logo-container{
+  color:#0079FF;
+  font-family: 'Courgette', cursive;
+}
+
+nav ul a {
+  color:#0079FF;
+}
+
+h1{
+  font-family: 'Courgette', cursive;
+}
+
+body {font: normal 18px/1 sans-serif;
+background-color: #2079b9; color: white;
+}
+
+.collection a.collection-item{
+  color:#0079FF;
+
+}
+
+span.badge.new {
+  background-color:#0079FF;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating){
+  color:#0079FF;
+}
+
+.input-field label {
+    color: #FFFFFF;
+    position: absolute;
+    top: 0.8rem;
+    left: 0.75rem;
+    font-size: 1rem;
+    cursor: text;
+    transition: .2s ease-out;
 }

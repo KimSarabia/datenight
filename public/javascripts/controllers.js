@@ -4,7 +4,7 @@ var app = angular.module("travelApp");
 
 app.controller("mainCtrl", function($scope, $state, reservationService) {
     $scope.reservationShow = false;
-    $scope.revNote = false;
+    $scope.expCard = false;
     console.log("controller works");
 
     reservationService.getNames();
@@ -16,31 +16,31 @@ app.controller("mainCtrl", function($scope, $state, reservationService) {
     };
 
     //////UPDATE
-    $scope.editActiv = function($this) {
+    $scope.editReserve = function($this) {
         console.log($this.item);
         reservationService.getByName($this.item.name);
     };
 
-    $scope.revealNote = function(val) {
-        $scope.revNote= true;
+    $scope.expandCard = function(val) {
+        $scope.expCard= true;
     }
 
     $scope.returnToHome = function() {
         $scope.reservationShow = false;
-        $scope.revNote= false;
+        $scope.expCard= false;
     }
 
     $scope.nextNote = function(val) {
         var curIndex = $scope.reservationsList.indexOf(val);
         console.log(val);
         if (curIndex + 1 < $scope.numReservations) {
-            $scope.revNote= false;
+            $scope.expCard= false;
             $scope.reserve = $scope.reservationsList[curIndex + 1];
         } else {
 
             console.log("No more reservations");
             $scope.reservationShow = false;
-            $scope.revNote= false;
+            $scope.expCard= false;
         }
 
     }
@@ -66,9 +66,12 @@ app.controller("mainCtrl", function($scope, $state, reservationService) {
 app.controller("adminCtrl", function($scope, $state, reservationService) {
     console.log("adminCtrl works");
     angular.element('#name').trigger('change');
-    angular.element('#reservation').trigger('change');
-    angular.element('#detail').trigger('change');
-    angular.element('#note').trigger('change');
+    angular.element('#date').trigger('change');
+    angular.element('#time').trigger('change');
+    angular.element('#ampm').trigger('change');
+    angular.element('#size').trigger('change');
+    angular.element('#allergies').trigger('change');
+    angular.element('#checkin').trigger('change');
     reservationService.getAll();
     $scope.modShow = false;
     $scope.allShow = true;
@@ -107,7 +110,7 @@ app.controller("adminCtrl", function($scope, $state, reservationService) {
         $scope.allShow = true;
     }
 
-    $scope.addNewActiv = function() {
+    $scope.addNewReserve = function() {
         $scope.addShow = true;
         $scope.modShow = false;
         $scope.allShow = false;

@@ -4,7 +4,7 @@
 var app = angular.module("reservationApp");
 
 app.service('reservationService', function($http) {
-    this.curActiv = [];
+    this.curReserve = [];
     this.currentReservationsList = [];
     this.numReservations=0;
 

@@ -1,21 +1,22 @@
 <div ng-controller="adminCtrl">
     <h1 class="header center white-text">Manage My Guestbook</h1>
-      <a ng-show ="allShow" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons" ng-click="addNewReserve()">Add</i></a>
+      <a ng-show ="allShow" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons" ng-click="addNewReserve()">Add</i></a>
 
-  <div class="allActivs" ng-show="allShow">
+  <div class="allReserves" ng-show="allShow">
 
-      <div class="row"  ng-repeat="reserve in allActivs track by $index">
+      <div class="row"  ng-repeat="reserve in allReserves track by $index">
         <div class="col s6 m6">
           <div class="card white darken-1">
-            <div class="card-content red-text">
+            <div class="card-content blue-text">
               <span class="card-title">{{reserve.name}}</span>
-              <p>Reservation: {{activ.reservation}}</p>
-              <p>Detail: {{activ.detail}}</p>
-              <p>Note: {{activ.note}}</p>
+              <p>Date: {{reserve.date}}</p>
+              <p>Time: {{reserve.time}}</p>
+              <p>Size: {{reserve.size}}</p>
+              <p>Allergies: {{reserve.allergies}}</p>
             </div>
             <div class="card-action">
-              <a ng-click="modifyA(this)">Modify</a>
-              <a ng-click="deleteA(this)">Delete</a>
+              <a ng-click="modifyR(this)">Modify</a>
+              <a ng-click="deleteR(this)">Delete</a>
             </div>
           </div>
         </div>
@@ -26,50 +27,50 @@
 
     <form class="col s12" ng-show="modShow">
       <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field col s12">
           <input id="name" type="text" class="validate" ng-model="update.name">
           <label class ="active" for="Name">Name: </label>
         </div>
         <div class="input-field col s6">
-          <input id="reservation" type="text" class="validate" ng-model="update.reservation">
-          <label class ="active" for="reservation">Reservation: </label>
+          <input id="reservation" type="text" class="validate" ng-model="update.date">
+          <label class ="active" for="date">Date: </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input class ="validate" id="time" type="number" ng-model="update.time">
+          <label class ="active" for="time">Time: </label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input class ="validate" id="detail" type="text" ng-model="update.detail">
-          <label class ="active" for="detail">Detail: </label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="note" type="text" class="validate" ng-model="update.note">
+          <input id="note" type="number" class="validate" ng-model="update.note">
           <label class ="active" for="note">Note: </label>
         </div>
       </div>
       <div class="row">
-  <button ng-click ="updateA(this)" class="btn waves-effect waves-light" type="submit" name="update">Update
+  <button ng-click ="updateR(this)" class="btn waves-effect waves-light" type="submit" name="update">Update
   </button>
   <button ng-click ="quitUpdate()" class="btn waves-effect waves-light" type="submit" name="quit">Exit
   </button>
       </div>
     </form>
 
-<div class="addNewA" ng-show="addShow">
+<div class="addNewR" ng-show="addShow">
       <form name ="addNew" class="col s12" >
       <div class="row">
         <div class="input-field col s6">
-          <input required id="name" type="text" class="validate" ng-model="newA.name">
-          <label class ="active" for="Name">Name: </label>
+          <input required id="name" type="text" class="validate" ng-model="newR.name">
+          <label class ="active" for="name">Name: </label>
         </div>
         <div class="input-field col s6">
-          <input required id="reservation" type="text" class="validate" ng-model="newA.reservation">
+          <input required id="date" type="text" class="validate" ng-model="newR.date">
           <label class ="active" for="reservation">Reservation: </label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input required id="detail" type="text" ng-model="newA.detail">
+          <input required id="detail" type="text" ng-model="newR.detail">
           <label class ="active" for="detail">Detail: </label>
         </div>
       </div>
