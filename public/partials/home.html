@@ -1,0 +1,42 @@
+<div class="section no-pad-bot" id="index-banner" ng-controller="mainCtrl">
+  <div class="container">
+    <br><br>
+    <h1 class="header center white-text">Your Purrfect Vacation is Here</h1>
+    <div class="row center">
+      <br><br>
+      <br><br>
+    </div>
+    <br><br>
+  </div>
+</div>
+
+<br><br>
+<div class="container" ng-hide="reservationShow">
+<div class="collection" ng-repeat="item in names track by $index">
+
+<a href="#!" class="collection-item">{{item.name}}<span class="new badge" ng-click="getReservations(this)">View</span></a>
+</div>
+</div>
+
+<div class="container" ng-show="reservationShow">
+
+<div class="row">
+  <div class="col s12 m12">
+    <div class="card white darken-1">
+      <div class="card-content red-text">
+        <span class="card-title">{{activ.name}}</span>
+        <p>Reservation: {{activ.reservation}}</p>
+        <br>
+        <p>Detail: {{activ.detail}}</p>
+        <br>
+        <h3><p ng-show="revNote">{{activ.note}}</p> </h3>
+      </div>
+      <div class="card-action">
+        <a ng-click="revealNote(activ)">NOTE</a>
+        <a ng-click="nextNote(activ)">NEXT</a>
+        <a ng-click="returnToHome()">HOME</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

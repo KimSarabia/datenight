@@ -1,5 +1,34 @@
-extends layout
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DateNite</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <script src="javascripts/module.js"></script>
+    <script src="javascripts/controllers.js"></script>
+    <script src="javascripts/services.js"></script>
+  </head>
+    <body ng-app = 'reservationApp'>
+      <nav class="white lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">TravelCat</a>
+          <ul class="right hide-on-med-and-down">
+            <li><a ui-sref="home">Dashboard</a></li>
+            <li><a ui-sref="admin">Manage</a></li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a ui-sref="home">Dashboard</a></li>
+            <li><a ui-sref="admin">Manage</a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+      </nav>
+      <ui-view></ui-view>
 
-block content
-  h1= title
-  p Welcome to #{title}
+      </body>
+</html>
