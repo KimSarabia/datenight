@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
+var Reservation = require('./models/reservation');
 
 mongoose.connect('mongodb://localhost/reservationsdb', function(err){
   if(err){
