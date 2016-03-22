@@ -11,6 +11,7 @@
               <span class="card-title">{{reserve.name}}</span>
               <p>Date: {{reserve.date}}</p>
               <p>Time: {{reserve.time}}</p>
+              <p>AM/PM: {{reserve.ampm}}</p>
               <p>Size: {{reserve.size}}</p>
               <p>Allergies: {{reserve.allergies}}</p>
             </div>
@@ -31,21 +32,33 @@
           <input id="name" type="text" class="validate" ng-model="update.name">
           <label class ="active" for="Name">Name: </label>
         </div>
-        <div class="input-field col s6">
+        <div class="input-field col s4">
           <input id="reservation" type="text" class="validate" ng-model="update.date">
           <label class ="active" for="date">Date: </label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field col s4">
           <input class ="validate" id="time" type="number" ng-model="update.time">
           <label class ="active" for="time">Time: </label>
         </div>
       </div>
       <div class="row">
+        <div class="input-field col s4">
+          <input class ="validate" id="ampm" type="text" ng-model="update.ampm">
+          <label class ="active" for="ampm">AM/PM: </label>
+        </div>
+      </div>
+      <div class="row">
         <div class="input-field col s12">
-          <input id="note" type="number" class="validate" ng-model="update.note">
-          <label class ="active" for="note">Note: </label>
+          <input id="size" type="number" class="validate" ng-model="update.size">
+          <label class ="active" for="size">Size: </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="allergies" type="text" class="validate" ng-model="update.allergies">
+          <label class ="active" for="allergies">Allergies: </label>
         </div>
       </div>
       <div class="row">
@@ -76,7 +89,7 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input required id="note" type="text" class="validate" ng-model="newA.note">
+          <input required id="note" type="text" class="validate" ng-model="newR.note">
           <label for="note">Note: </label>
         </div>
       </div>
